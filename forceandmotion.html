@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Force And Motion</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<style>
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://user-uploads.perchance.org/file/c2f4f112cdaedd87b9292ebdf470d75d.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  animation: zoomOut 25s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.6); /* Adjusted from 0 to 0.5 for a larger initial size */
+  }
+  to {
+    transform: scale(1); /* Adjusted from 1 to 1.2 for a slightly larger final size */
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+  
+}
+
+.text-container {
+  position: absolute;
+  text-align: left;
+  color: white;
+  font-size: 15px;
+  margin-top: -50vh;
+  
+}
+
+
+.text-container-qna {
+  font-size: 13px;
+  color: white;
+  border-radius: 5px;
+  position: absolute; /* Positioning relative to the nearest positioned ancestor */
+  top: 80%; /* 60% from the top of the screen to move it below the center */
+  left: 50%; /* 50% from the left of the screen */
+  transform: translate(-50%, -50%); /* Adjusts the position */
+  width: 80vw; /* Set the width as desired */
+  height: 40vh; /* Set the height as desired */
+  overflow-y: auto; /* Enables vertical scrolling if needed */
+  overflow-x: hidden; /* Disables horizontal scrolling */
+  backdrop-filter: blur(1px); /* Applies a blur effect to the background */
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+}
+
+.text-container-qna p {
+  margin: 20px; /* Adjust the margin as needed */
+  font-family: 'Baloo Thambi 2', cursive;
+  line-height: 1;
+}
+
+.bebas-text {
+ font-family: 'Bebas Neue', sans-serif;
+ margin-left: -30vh;
+}
+
+
+.zoom-in {
+  animation: zoomIn 30s ease-in forwards; /* Increased duration from 5s to 10s for a slower animation */
+}
+
+/* Add responsive image styling */
+.img-responsive {
+  width: 100%; /* Make the image width 100% of the parent container */
+  height: auto; /* Set the height to auto to maintain aspect ratio */
+  max-width: 400px; /* Optional: Set a max-width for the image */
+  animation: zoomIn 20s ease-in forwards;
+}
+
+@media (max-width: 768px) {
+  .img-responsive {
+    max-width: 100%; /* On smaller screens, allow the image to take full width */
+  }
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.content {
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 50px;
+  }
+}
+
+
+/* test for navigation menu */
+
+/* Button styling */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 10px rgba(255, 82, 82, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+  }
+}
+
+.home-button {
+  
+  padding: 5px 10px; /* Reduced padding for smaller size */
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background-color: #ff5252;
+  color: white;
+  font-size: 14px; /* Smaller font size */
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Positioning class */
+.button-right-top {
+  position: fixed; /* Fixed position */
+  right: 30px; /* 10px from the right */
+  top: 20px; /* 10px from the top */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+
+.home-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;
+  height: 300%;
+  background-color: #ff5252;
+  transition: all 0.7s ease;
+  display: block;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.home-button:hover::before {
+  width: 0%;
+  height: 0%;
+}
+
+.home-button:hover {
+  animation: pulse 1s infinite;
+}
+
+/* Text reveal on hover */
+.home-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.home-button:hover span {
+  color: #fff;
+}
+
+qes {
+  color: #FC3367;
+}
+ans {
+  color: black;
+}
+
+/* fraction*/
+mi {
+  font-size: 11px;
+}
+mn {
+  margin-left: 11vh;
+}
+
+
+/* chat */
+/* Basic styles for the popup */
+.chat-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  width: 250px;
+}
+
+/* Adds styles to the form container */
+.form-container {
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Enables full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 8px;
+  resize: none;
+  min-height: 100px;
+}
+
+/* When the textarea gets focus, do something (changes color) */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+  
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* Adds a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Adds hover effects to all the buttons */
+.form-container .btn:hover {
+  opacity: 1;
+}
+
+textarea::placeholder {
+  color: red;
+  font-size: 10px; /* Adjust the font size as needed */
+
+</style>
+
+</head>
+<body>
+<!--
+<div class="chat-popup" id="myForm" style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); margin-top: 5px;font-family: 'Baloo Thambi 2', cursive;
+line-height: 1;">
+    <form class="form-container" onsubmit="sendEmail(event)" action="#">
+        <h2 style="color: #5d17cf; font-size: 27px; text-align: center; display: flex; justify-content: center; align-items: center;">WANNA THANK ME?</h2>
+        <label for="msg">Send  Me  Your " Thank  You " Msg:</label>
+        <textarea placeholder="<WRITE HERE> ... BUT... Write Only Sweet Things About Me Pls Coz I Am Allergic To Bad Things. If you don't wanna say Thank-You then its okey. You can just simply click on Cancel button." name="msg" required></textarea>
+        <button type="submit" class="btn">Send</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+    </form>
+</div>
+<script>
+    (function() {
+      emailjs.init('keBpcA_D73qYYoirm');
+    })();
+    // Function to open the popup
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+    
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+    
+      // Get the value of the textarea
+      const messageInput = document.querySelector('textarea[name="msg"]');
+      const message = messageInput.value;
+    
+      // Send the email using EmailJS
+      emailjs.send('service_l47eovf', 'template_bvlreki', {
+          message: message,
+          // Add any other parameters you need
+        })
+        .then(function(response) {
+          console.log('Email sent successfully!', response.status, response.text);
+          // Reset the form or show a success message
+          messageInput.value = '';
+        }, function(error) {
+          console.error('Failed to send email:', error);
+          // Show an error message
+        });
+    }
+
+    // Function to close the popup
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+    // Show the chat popup after 3 seconds
+    window.onload = function () {
+        setTimeout(openForm, 3000);
+    };
+</script>
+-->
+
+<button class="home-button button-right-top" onclick="window.location.href='index.html';">
+  <span>Home</span>
+</button>
+
+<div class="image-container">
+  
+  <img src="https://user-uploads.perchance.org/file/9f46234957a408fcedd7fe60a341c749.png" class="zoom-in" alt="Car Cloud">
+  <div class="text-container bebas-text">
+    <h7>[ CHAPTER ]</h7> 
+    <h3 style="line-height: 1; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">FORCE <span style="font-size: 15px;">AND</span> <br> MOTION</h3>
+  </div>
+
+  <div class="text-container-qna">
+    
+    <p><b><u><span style="font-size: 20px; color: cyan; font-stretch: expanded; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">EXERCISE SOLUTION:</b></u></span> <br>
+      <span style="text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">4. Answer the following questions in details.</span> <br><br>
+      <qes>a) Describe the motion of an object in which its speed is constant but the velcity is changing.</qes> <br>
+      <ans><u><b>Ans :</b></u> </ans>
+      <br><br>
+      <qes>b) Can the average speed be ever zero? Explain.</qes> <br><br>
+      <ans><u><b>Ans :</b></u> No, average speed can never be zero as long as there is some distance traveled over a period of time.if you travel a certain distance, your total distance traveled is not zero. Thus your average speed won't be zero.</ans> <br><br>
+      <qes>c) Explain the condition of the velocities of the two bodies in motion when:<br> i) their velocities are added for relative velocity.<br> ii) their velocities are subtracted for relative velocity.</qes><br><br>
+      <ans><u><b>Ans :</b></u> The velocities of the two bodies are added for relative velocity if two bodies are moving in opposite direction with same or different velocities. <br> The velocities of the two bodies are subtracted for relative velocity if two bodies are moving in the same direction with same or different velocities. <br><br></ans>
+      <qes>d) What is indicated by the statement "acceleration of a body is 10 m/s<sup>2</sup>"?</qes><br>
+      <ans><u><b>Ans :</b></u> If a body's acceleration is 10 m/s<sub>2</sub>, it means that the velocity of the body is changing by 10 meters per second every second. <br><br> For example, if an object starts from rest (velocity = 0 m/s) and has a constant acceleration of 10 m/s<sup>2</sup>, its velocity after 1 second would be 10 m/s, after 2 seconds it would be 20 m/s, after 3 seconds it would be 30 m/s, and so on.</ans><br><br>
+      <qes>e) Describe the conditions when the acceleration of a body is positive, negative and zero?</qes><br><br>
+      <ans><u><b>Ans :</b></u> The acceleratioin of a body will be positive if the velocity of the body increases.<br> The acceleratioin of a body will be negative if the velocity of the body decreases. <br> The acceleratioin of a body will be zero if the velocity of the body remains same or constant.<br><br>
+      <qes>What is the value of acceleratioin in the following conditions? <br> i) When a body thrown upward reaches its maximum height.<br> ii) When a body comes at its initial position after motion. <br> iii) When a body gains a velocity of 60 m/s within 5 seconds from the rest position. <br> iv) When a body moves with constant velocity. <br> v) When a body falling downwards strikes the ground.</qes><br><br>
+      <ans><u><b>Ans :</b></u> i) At the maximum height, the velocity of the body becomes zero. Therefore, the acceleration at this point is zero. <br><br> ii) If the body returns to its initial position after being thrown upwards, its velocity at that point is again zero (because intial velocity and final velocity will be the same. so while we subtract them both it will be zero). Therefore, the acceleration at this point is also zero.<br><br> iii)<br> Initial velocity (u) = 0 m/s<br> Final velocity (v) = 60 m/s <br> Time taken (t) = 5 sec<br> Acceleration (a) = ?<br> <br>
+        Acceleration (a)&nbsp;= 
+        <math>
+          <mrow>
+           <!--- <mn>Acceleration (a) = </mn> --->
+            <mfrac>
+              <mi> v - u</mi>
+              <mi> t</mi>
+            </mfrac>
+          </mrow>
+        </math>
+        <br><br>
+        <math>
+          <mrow>
+            <mn>= </mn>
+            <mfrac>
+              <mi> 60 - 0</mi>
+              <mi> 5</mi>
+            </mfrac>
+          </mrow>
+        </math>
+        <br><br>
+        <math>
+          <mrow>
+            <mn>= </mn>
+            <mfrac>
+              <mi>60</mi>
+              <mi>5</mi>
+            </mfrac>
+          </mrow>
+        </math>
+        <br><br>
+        <span style="margin-left: 8vh;">&#8756; a &nbsp;= 12 m/s<sup>2</sup></span><br><br> 
+        iv) When a body moves with a constant velocity, its acceleration will be zero because there wil be no change in velocity.<br><br>
+        v) When the body hits the ground, its acceleration cannot be determined because its speed suddenly drops from a finite value to zero within a very short period of time.But just before the impact, the acceleration is approximately 9.8 m/s².</ans><br><br>
+      <qes>g) Which formula will you use to calculate relative velocity of a body in the following conditions?<br> i) If two boys are running in the same direction from the same reference point.<br> ii) If two girls are running in the opposite direction from the same reference point. </qes>
+      <br><br>
+      <ans><u><b>Ans :</b></u> i) Let velocity of two boys be V<sub>A</sub> and V<sub>B</sub>. Then,<br> The formula to calculate the relative velocity of two boys running in the same direction is given by, V<sub>AB</sub> = V<sub>A</sub> - V<sub>B</sub> <br><br> ii) Let velocity of two girls be V<sub>A</sub> and V<sub>B</sub>. Then,<br> The formula to calculate the relative velocity of two girls running in the opposite direction is given by, V<sub>AB</sub> = V<sub>A</sub> + V<sub>B</sub>
+      </ans>
+    </p>
+  </div>
+</div>
+</body>
+</html>
